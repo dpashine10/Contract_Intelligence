@@ -1,0 +1,226 @@
+[
+  {
+    "id": "unans_001",
+    "question": "What are the terms of the licensing agreement between Microsoft Corporation and OpenAI Inc.?",
+    "label": "unanswerable",
+    "split": "train",
+    "rationale": "No agreement involving Microsoft Corporation and OpenAI Inc. appears in the supplied contract corpus."
+  },
+  {
+    "id": "unans_002",
+    "question": "What is the expiration date of the merger agreement between Tesla Inc. and SolarCity Corporation?",
+    "label": "unanswerable",
+    "split": "train",
+    "rationale": "No Tesla/SolarCity merger agreement appears in the supplied contract corpus."
+  },
+  {
+    "id": "unans_003",
+    "question": "Does the collaboration agreement between Pfizer Inc. and BioNTech SE contain a force majeure clause?",
+    "label": "unanswerable",
+    "split": "train",
+    "rationale": "No collaboration agreement involving Pfizer Inc. and BioNTech SE appears in the supplied contract corpus."
+  },
+  {
+    "id": "unans_004",
+    "question": "What royalty rate does Apple Inc. pay to Qualcomm Incorporated under their patent license?",
+    "label": "unanswerable",
+    "split": "test",
+    "rationale": "No Apple/Qualcomm patent license appears in the supplied contract corpus."
+  },
+  {
+    "id": "unans_005",
+    "question": "What are the data protection obligations in the cloud services agreement between Amazon Web Services and Netflix Inc.?",
+    "label": "unanswerable",
+    "split": "train",
+    "rationale": "No identifiable Amazon Web Services/Netflix cloud services agreement appears in the supplied contract corpus."
+  },
+  {
+    "id": "unans_006",
+    "question": "What is the termination notice period in the distribution agreement between Coca-Cola Company and Monster Beverage Corporation?",
+    "label": "unanswerable",
+    "split": "train",
+    "rationale": "No Coca-Cola/Monster Beverage distribution agreement appears in the supplied contract corpus."
+  },
+  {
+    "id": "unans_007",
+    "question": "What is the employee stock option pool percentage in the joint venture between Veoneer AB and Nissin Kogyo Co., Ltd.?",
+    "label": "unanswerable",
+    "split": "test",
+    "rationale": "The Veoneer/Nissin amendment discusses equity interests and termination but does not state an employee stock option pool or percentage."
+  },
+  {
+    "id": "unans_008",
+    "question": "What are the clinical trial milestone payments in the strategic alliance between Sucampo Pharmaceuticals and R-Tech Ueno?",
+    "label": "unanswerable",
+    "split": "test",
+    "rationale": "The Sucampo/R-Tech agreement contains redacted clinical-trial and development provisions, and no recoverable milestone-payment value is supplied."
+  },
+  {
+    "id": "unans_009",
+    "question": "What is the minimum purchase commitment for the reseller in the Walabot-HOME Reseller Agreement?",
+    "label": "unanswerable",
+    "split": "train",
+    "rationale": "The Walabot-HOME agreement defines an MOQ and references Schedule 1, but the minimum quantity is redacted as unavailable."
+  },
+  {
+    "id": "unans_010",
+    "question": "What are the indemnification caps in the Sponsorship Agreement between Jacksonville Jaguars LLC and The ARC Group Inc.?",
+    "label": "unanswerable",
+    "split": "test",
+    "rationale": "The Jaguars/ARC sponsorship text contains no indemnification cap, liability cap, or damages cap."
+  },
+  {
+    "id": "unans_012",
+    "question": "What are the service level availability targets in the Support and Maintenance Agreement between On2 Technologies and Wildform Inc.?",
+    "label": "unanswerable",
+    "split": "test",
+    "rationale": "The On2/Wildform agreement contains support and maintenance obligations but no uptime, availability, SLA, or service-level target."
+  },
+  {
+    "id": "unans_014",
+    "question": "What are the minimum annual marketing spend requirements in the Marketing Agreement between Loop Industries and Indorama Loop Technologies?",
+    "label": "unanswerable",
+    "split": "train",
+    "rationale": "The Loop/Indorama agreement contains marketing language but no minimum, budget, or annual spending requirement."
+  },
+  {
+    "id": "unans_015",
+    "question": "What is the earn-out formula in the Joint Venture Agreement between Tate & Lyle Fermentation Products and IGene Biotechnology?",
+    "label": "unanswerable",
+    "split": "train",
+    "rationale": "The IGene joint venture agreement contains payment and purchase-price provisions but no earn-out formula."
+  },
+  {
+    "id": "unans_020",
+    "question": "What was the stock price of Veoneer AB on the effective date of the JV amendment with Nissin Kogyo?",
+    "label": "unanswerable",
+    "split": "train",
+    "rationale": "The Veoneer/Nissin amendment gives its effective date but contains no stock-price or market-data value."
+  },
+  {
+    "id": "unans_021",
+    "question": "How many employees did BicycleTX Ltd have when the service agreement with Nigel Crockett was signed?",
+    "label": "unanswerable",
+    "split": "train",
+    "rationale": "The BicycleTX service agreement identifies the employee and effective date but contains no employee headcount."
+  },
+  {
+    "id": "unans_022",
+    "question": "What was the quarterly revenue of Flotek Chemistry, LLC in Q1 2019 when the supply agreement was executed?",
+    "label": "unanswerable",
+    "split": "train",
+    "rationale": "The Flotek supply agreement contains quarterly forecasts and inventory-cost reports, not Flotek's corporate revenue."
+  },
+  {
+    "id": "unans_023",
+    "question": "Did the Jacksonville Jaguars make the playoffs in the 2017 NFL season when the ARC sponsorship was executed?",
+    "label": "unanswerable",
+    "split": "train",
+    "rationale": "The Jaguars/ARC agreement contains conditional playoff-payment language but not the 2017 season result."
+  },
+  {
+    "id": "unans_024",
+    "question": "What was the market capitalization of Papa John's International on March 15, 2019, the effective date of the Shaq endorsement agreement?",
+    "label": "unanswerable",
+    "split": "train",
+    "rationale": "The Papa John's endorsement agreement confirms the date and discusses restricted stock units but contains no market-capitalization value."
+  },
+  {
+    "id": "unans_026",
+    "question": "What was the price of natural gas per MMBtu on April 14, 2015, the effective date of the PennTex gas transportation agreement?",
+    "label": "unanswerable",
+    "split": "test",
+    "rationale": "The PennTex agreement provides a cash-out pricing formula and index source, not the historical April 14 gas price."
+  },
+  {
+    "id": "unans_027",
+    "question": "Did R-Tech Ueno, Ltd. receive FDA approval for any product during the term of the Sucampo strategic alliance?",
+    "label": "unanswerable",
+    "split": "train",
+    "rationale": "The Sucampo/R-Tech agreement discusses regulatory authorities and development but contains no FDA approval outcome."
+  },
+  {
+    "id": "unans_028",
+    "question": "Was the Joint Venture between MJ Syndicated and Simply Herbals successfully terminated or is it still active?",
+    "label": "unanswerable",
+    "split": "test",
+    "rationale": "The MJ/Simply Herbals agreement states a fixed term but does not document the parties' post-execution termination or continuation outcome."
+  },
+  {
+    "id": "unans_029",
+    "question": "Did the non-competition agreement between Glamis Gold and Western Copper result in any litigation?",
+    "label": "unanswerable",
+    "split": "train",
+    "rationale": "The Western Copper non-compete states the restriction and geographic area but not any later litigation outcome."
+  },
+  {
+    "id": "unans_030",
+    "question": "Did the strategic alliance between Information System Associates and Rubicon Software Group achieve its revenue targets?",
+    "label": "unanswerable",
+    "split": "train",
+    "rationale": "The Duo strategic alliance correctly identifies Information System Associates, Inc. and Rubicon Software Group plc and defines compensation, but not achieved revenue targets."
+  },
+  {
+    "id": "unans_031",
+    "question": "Was the reseller territory for Vayyar Imaging's Walabot-HOME expanded after July 2019?",
+    "label": "unanswerable",
+    "split": "test",
+    "rationale": "The Walabot-HOME agreement appoints a non-exclusive reseller, requires written amendments, and contains no evidence of a post-July-2019 territory expansion."
+  },
+  {
+    "id": "unans_032",
+    "question": "Did the co-branding agreement between PCQuote and its partner lead to a joint product launch?",
+    "label": "unanswerable",
+    "split": "test",
+    "rationale": "The PCQuote agreement authorizes a co-branded software service but contains no later launch outcome."
+  },
+  {
+    "id": "unans_033",
+    "question": "Did the endorsement agreement between Holiday RV Superstores and Affinity Group result in a measurable sales increase?",
+    "label": "unanswerable",
+    "split": "test",
+    "rationale": "The Holiday RV/Affinity agreement describes the endorsement and vehicle sales but contains no measured sales increase or later performance result."
+  },
+  {
+    "id": "unans_034",
+    "question": "Was the Purolator-Parcelway transportation services agreement later terminated, or did it remain in force?",
+    "label": "unanswerable",
+    "split": "train",
+    "rationale": "The Purolator/Parcelway agreement continues indefinitely until terminated, but the supplied contract does not establish whether a later termination occurred."
+  },
+  {
+    "id": "unans_037",
+    "question": "What insurance requirements apply to the Service Agreement between Theravance Biopharma UK and Brett Haumann?",
+    "label": "unanswerable",
+    "split": "train",
+    "rationale": "The Theravance service agreement mentions permanent health insurance as a benefit but contains no insurance requirement, coverage, policy, or indemnity clause."
+  },
+  {
+    "id": "unans_040",
+    "question": "What was Vayyar Imaging Ltd.'s total revenue for 2019, the calendar year in which the Walabot-HOME Reseller Agreement took effect?",
+    "label": "unanswerable",
+    "split": "train",
+    "rationale": "The Walabot-HOME agreement took effect July 31, 2019 and identifies Vayyar Imaging Ltd. as Supplier, but the supplied corpus contains no Vayyar revenue figure or financial statement."
+  },
+  {
+    "id": "unans_041",
+    "question": "How many AB Wately subscribers accessed the PCQ software and Hyperfeed on October 11, 1996, the effective date of the PCQuote co-branding agreement?",
+    "label": "unanswerable",
+    "split": "train",
+    "rationale": "The PCQuote agreement is effective October 11, 1996 and states that ABW subscribers accessed the software and Hyperfeed, but supplies no subscriber count."
+  },
+  {
+    "id": "unans_042",
+    "question": "What was On2 Technologies, Inc.'s total revenue in 2005, the year of the Support and Maintenance Agreement with Wildform?",
+    "label": "unanswerable",
+    "split": "test",
+    "rationale": "The On2/Wildform Support and Maintenance Agreement is dated as of April __, 2005, but the supplied corpus contains no On2 revenue or financial statement."
+  },
+  {
+    "id": "unans_043",
+    "question": "How many patients, if any, had been treated with the proposed COVID-19 treatment by May 12, 2020?",
+    "label": "unanswerable",
+    "split": "test",
+    "rationale": "The Premier Biomedical/Marv agreement is effective May 12, 2020 and concerns development of a potential treatment, but contains no patient-treatment count or clinical outcome."
+  }
+]
