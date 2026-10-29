@@ -1,0 +1,23 @@
+{
+  "threshold": 60.97195992041745,
+  "criterion": "max balanced accuracy on train; ties -> lower false-abstention rate -> lower threshold",
+  "train_metrics_at_threshold": {
+    "num_answerable": 140,
+    "num_unanswerable": 20,
+    "false_abstentions": 36,
+    "correct_abstentions": 17,
+    "correct_abstention_rate": 0.85,
+    "false_abstention_rate": 0.2571428571428571,
+    "abstention_precision": 0.32075471698113206,
+    "abstention_recall": 0.85,
+    "abstention_f1": 0.4657534246575342,
+    "balanced_accuracy": 0.7964285714285715
+  },
+  "num_candidates": 155,
+  "score": "raw_top1",
+  "calibrated_on": {
+    "split": "train",
+    "answerable": 140,
+    "unanswerable": 20
+  }
+}

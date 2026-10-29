@@ -1,0 +1,96 @@
+{
+  "definitions": "see app/metrics.py docstring; macro = mean over queries (primary), pooled = summed characters (secondary)",
+  "train": {
+    "retrieval": {
+      "1": {
+        "macro_precision": 0.017647653798591453,
+        "macro_recall": 0.07186210193327149,
+        "pooled_precision": 0.016293482208060147,
+        "pooled_recall": 0.05385406774295663,
+        "num_queries": 140
+      },
+      "2": {
+        "macro_precision": 0.015362952165072507,
+        "macro_recall": 0.10949836815013575,
+        "pooled_precision": 0.014502473695212877,
+        "pooled_recall": 0.08784425451092118,
+        "num_queries": 140
+      },
+      "4": {
+        "macro_precision": 0.021359719481468278,
+        "macro_recall": 0.30971986948501185,
+        "pooled_precision": 0.019930258240353386,
+        "pooled_recall": 0.24161126938904717,
+        "num_queries": 140
+      },
+      "8": {
+        "macro_precision": 0.022884056109712572,
+        "macro_recall": 0.6108447481954282,
+        "pooled_precision": 0.02240684875662454,
+        "pooled_recall": 0.543724279835391,
+        "num_queries": 140
+      },
+      "16": {
+        "macro_precision": 0.01659983069314988,
+        "macro_recall": 0.8401721937167081,
+        "pooled_precision": 0.01638812717705477,
+        "pooled_recall": 0.793315395167247,
+        "num_queries": 140
+      },
+      "32": {
+        "macro_precision": 0.009727252574830286,
+        "macro_recall": 0.945991396623747,
+        "pooled_precision": 0.009633798997622673,
+        "pooled_recall": 0.9390629946185501,
+        "num_queries": 140
+      },
+      "64": {
+        "macro_precision": 0.0051576821318364795,
+        "macro_recall": 0.9908299589211658,
+        "pooled_precision": 0.005112710372283212,
+        "pooled_recall": 0.9927851640814603,
+        "num_queries": 140
+      }
+    },
+    "diagnostic_gold_document_hit_rate": {
+      "1": 1.0,
+      "2": 1.0,
+      "4": 1.0,
+      "8": 1.0,
+      "16": 1.0,
+      "32": 1.0,
+      "64": 1.0
+    },
+    "abstention": {
+      "num_answerable": 140,
+      "num_unanswerable": 20,
+      "false_abstentions": 38,
+      "correct_abstentions": 16,
+      "correct_abstention_rate": 0.8,
+      "false_abstention_rate": 0.2714285714285714,
+      "abstention_precision": 0.2962962962962963,
+      "abstention_recall": 0.8,
+      "abstention_f1": 0.43243243243243246,
+      "balanced_accuracy": 0.7642857142857143
+    },
+    "abstention_score_length_correlation_answerable": 0.7055661104527549,
+    "diagnosis": {
+      "k": 8,
+      "answerable_buckets": {
+        "wrong_document": 0,
+        "right_doc_wrong_section": 45,
+        "partial_span": 37,
+        "full_coverage": 58
+      },
+      "false_abstentions": 38,
+      "false_answers_on_unanswerable": 4,
+      "incorrect_abstention": 42
+    }
+  },
+  "abstention_rule": {
+    "rule": "top1_score_threshold",
+    "score": "raw_top1",
+    "threshold": 45.57640282530562,
+    "source": "calibrated on train in run 20261029T191254834384Z_49acd9e3"
+  }
+}

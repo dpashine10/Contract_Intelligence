@@ -1,0 +1,183 @@
+{
+  "definitions": "see app/metrics.py docstring; macro = mean over queries (primary), pooled = summed characters (secondary)",
+  "train": {
+    "retrieval": {
+      "1": {
+        "macro_precision": 0.010896775974381125,
+        "macro_recall": 0.04623664832992915,
+        "pooled_precision": 0.010298801820365439,
+        "pooled_recall": 0.03381871900390419,
+        "num_queries": 140
+      },
+      "2": {
+        "macro_precision": 0.01621438041447459,
+        "macro_recall": 0.11624689435802119,
+        "pooled_precision": 0.015131658830080767,
+        "pooled_recall": 0.0953360768175583,
+        "num_queries": 140
+      },
+      "4": {
+        "macro_precision": 0.021056633447667093,
+        "macro_recall": 0.31377302777786326,
+        "pooled_precision": 0.020227316509343094,
+        "pooled_recall": 0.2409781576448243,
+        "num_queries": 140
+      },
+      "8": {
+        "macro_precision": 0.023621662011423298,
+        "macro_recall": 0.60725181216253,
+        "pooled_precision": 0.022833664633559295,
+        "pooled_recall": 0.5318006753191938,
+        "num_queries": 140
+      },
+      "16": {
+        "macro_precision": 0.016602980696604753,
+        "macro_recall": 0.7882563721066661,
+        "pooled_precision": 0.016234052607629747,
+        "pooled_recall": 0.7331433998100665,
+        "num_queries": 140
+      },
+      "32": {
+        "macro_precision": 0.010344003410349014,
+        "macro_recall": 0.9327307867928324,
+        "pooled_precision": 0.010124557140065963,
+        "pooled_recall": 0.9145035348739052,
+        "num_queries": 140
+      },
+      "64": {
+        "macro_precision": 0.00552485693494291,
+        "macro_recall": 0.9874039555150839,
+        "pooled_precision": 0.005445038794885223,
+        "pooled_recall": 0.9894481375962857,
+        "num_queries": 140
+      }
+    },
+    "diagnostic_gold_document_hit_rate": {
+      "1": 1.0,
+      "2": 1.0,
+      "4": 1.0,
+      "8": 1.0,
+      "16": 1.0,
+      "32": 1.0,
+      "64": 1.0
+    },
+    "abstention": {
+      "num_answerable": 140,
+      "num_unanswerable": 20,
+      "false_abstentions": 37,
+      "correct_abstentions": 16,
+      "correct_abstention_rate": 0.8,
+      "false_abstention_rate": 0.2642857142857143,
+      "abstention_precision": 0.3018867924528302,
+      "abstention_recall": 0.8,
+      "abstention_f1": 0.4383561643835617,
+      "balanced_accuracy": 0.7678571428571429
+    },
+    "abstention_score_length_correlation_answerable": 0.7111995383403062,
+    "diagnosis": {
+      "k": 8,
+      "answerable_buckets": {
+        "wrong_document": 0,
+        "right_doc_wrong_section": 46,
+        "partial_span": 18,
+        "full_coverage": 76
+      },
+      "false_abstentions": 37,
+      "false_answers_on_unanswerable": 4,
+      "incorrect_abstention": 41
+    }
+  },
+  "test": {
+    "retrieval": {
+      "1": {
+        "macro_precision": 0.020475876321124048,
+        "macro_recall": 0.08115942028985507,
+        "pooled_precision": 0.01892079812899012,
+        "pooled_recall": 0.05707203914963933,
+        "num_queries": 54
+      },
+      "2": {
+        "macro_precision": 0.019914043879855892,
+        "macro_recall": 0.14147487263566794,
+        "pooled_precision": 0.019233942380674756,
+        "pooled_recall": 0.11112523435762178,
+        "num_queries": 54
+      },
+      "4": {
+        "macro_precision": 0.015419443402670461,
+        "macro_recall": 0.2390994765466367,
+        "pooled_precision": 0.01527746640078349,
+        "pooled_recall": 0.16457466077727287,
+        "num_queries": 54
+      },
+      "8": {
+        "macro_precision": 0.023922702184356156,
+        "macro_recall": 0.6075641392156383,
+        "pooled_precision": 0.02346627474558532,
+        "pooled_recall": 0.502303854587054,
+        "num_queries": 54
+      },
+      "16": {
+        "macro_precision": 0.0188158004798892,
+        "macro_recall": 0.8444475904779954,
+        "pooled_precision": 0.01882555604677043,
+        "pooled_recall": 0.7848358702214878,
+        "num_queries": 54
+      },
+      "32": {
+        "macro_precision": 0.011340772943111902,
+        "macro_recall": 0.9788484012476372,
+        "pooled_precision": 0.011232288640974175,
+        "pooled_recall": 0.9330452191045155,
+        "num_queries": 54
+      },
+      "64": {
+        "macro_precision": 0.005887559703579747,
+        "macro_recall": 0.992949743612994,
+        "pooled_precision": 0.005777576773413683,
+        "pooled_recall": 0.9738790555785058,
+        "num_queries": 54
+      }
+    },
+    "diagnostic_gold_document_hit_rate": {
+      "1": 1.0,
+      "2": 1.0,
+      "4": 1.0,
+      "8": 1.0,
+      "16": 1.0,
+      "32": 1.0,
+      "64": 1.0
+    },
+    "abstention": {
+      "num_answerable": 54,
+      "num_unanswerable": 12,
+      "false_abstentions": 13,
+      "correct_abstentions": 10,
+      "correct_abstention_rate": 0.8333333333333334,
+      "false_abstention_rate": 0.24074074074074073,
+      "abstention_precision": 0.43478260869565216,
+      "abstention_recall": 0.8333333333333334,
+      "abstention_f1": 0.5714285714285714,
+      "balanced_accuracy": 0.7962962962962963
+    },
+    "abstention_score_length_correlation_answerable": 0.47417205360830333,
+    "diagnosis": {
+      "k": 8,
+      "answerable_buckets": {
+        "wrong_document": 0,
+        "right_doc_wrong_section": 15,
+        "partial_span": 12,
+        "full_coverage": 27
+      },
+      "false_abstentions": 13,
+      "false_answers_on_unanswerable": 2,
+      "incorrect_abstention": 15
+    }
+  },
+  "abstention_rule": {
+    "rule": "top1_score_threshold",
+    "score": "raw_top1",
+    "threshold": 46.336014421582384,
+    "source": "calibrated on train in run 20261029T191249464881Z_127bfd15"
+  }
+}

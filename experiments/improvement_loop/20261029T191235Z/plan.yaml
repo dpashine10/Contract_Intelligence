@@ -1,0 +1,78 @@
+# Self-improvement loop: objective, guardrails and candidate pool.
+# Written BEFORE any improvement experiment was run (only the baseline train
+# run and its failure breakdown had been seen). The loop evaluates on TRAIN
+# only; it never reads test data.
+
+base_config: configs/baseline.yaml
+output_root: experiments/improvement_loop
+max_iterations: 8
+
+objective:
+  # Primary: macro character-level Recall@8 on the 140 train answerable queries.
+  # Why recall: missing the governing clause is the costly error for a legal
+  # user; extra text is a reading cost. Why k=8: about what a reviewer can scan
+  # (UI shows 5 by default), it is one of the LegalBench-RAG k values, and the
+  # baseline leaves room to improve there (train R@8 = 0.386).
+  primary_metric: macro_recall
+  primary_k: 8
+  min_improvement: 0.01          # absolute; smaller changes are treated as noise
+
+guardrails:
+  # Checked against BOTH the baseline and the current best (prevents drift).
+  precision_k: 8
+  max_relative_precision_drop: 0.10    # macro P@8 may not fall by more than 10%
+  max_false_abstention_increase: 0.05  # train answerable (0.05 ~ 7 of 140 queries)
+  max_correct_abstention_drop: 0.05    # train unanswerable (0.05 = 1 of 20 queries)
+
+abstention_acceptance:
+  # For changes that leave retrieval unchanged (|delta primary| < min_improvement):
+  # accept if guardrails pass AND either
+  #   (a) train balanced accuracy improves by >= 0.02, or
+  #   (b) balanced accuracy drops by <= 0.01 AND |corr(abstention score, query
+  #       length)| on train answerable falls by >= 0.30. Rationale: every train
+  #       answerable query is long and template-shaped, so a length-driven
+  #       score fits train but fails short real questions; (b) rewards a score
+  #       that measures relevance rather than query length.
+  min_balanced_accuracy_gain: 0.02
+  max_balanced_accuracy_loss_for_robustness: 0.01
+  min_length_correlation_reduction: 0.30
+
+diagnostic_k: 8
+
+# Candidate pool. The proposer computes failure buckets on train for the
+# current best config and picks the first untried candidate that targets the
+# largest bucket (falling back to the next-largest bucket). Each candidate is
+# a patch applied to the CURRENT BEST config, so each test changes one thing.
+candidates:
+  - id: chunk_128
+    targets: right_doc_wrong_section
+    rationale: Shorter chunks localise the answering clause; 256-token chunks (~1,600 chars) dilute the question terms with unrelated text.
+    patch: {chunking: {chunk_size: 128, chunk_overlap: 16}}
+  - id: doc_local_rerank
+    targets: right_doc_wrong_section
+    rationale: Party names in "Consider the ... between A and B" match nearly every chunk of the right contract. Re-scoring chunks inside the top document with document-local IDF down-weights those names and lets the clause-specific question terms decide.
+    patch: {retrieval: {rerank: doc_local_bm25, rerank_docs: 1}}
+  - id: chunk_64
+    targets: right_doc_wrong_section
+    rationale: Test whether even finer chunks localise better or start cutting answers apart.
+    patch: {chunking: {chunk_size: 64, chunk_overlap: 8}}
+  - id: query_stopwords
+    targets: right_doc_wrong_section
+    rationale: Function words in the long template queries add noise to BM25 sums; drop a small English stop-word list from queries only.
+    patch: {retrieval: {query_stopwords: true}}
+  - id: abstain_normalized
+    targets: incorrect_abstention
+    rationale: Raw BM25 grows with query length. Divide the top-1 score by the query's maximum attainable BM25 score (sum of idf*(k1+1) over query terms) to get a length-invariant relevance ratio.
+    patch: {abstention: {score: normalized_top1}}
+  - id: abstain_zscore
+    targets: incorrect_abstention
+    rationale: Alternative length-invariant score - how far the top chunk stands out from the score distribution over all chunks, (top1 - mean) / std.
+    patch: {abstention: {score: zscore_top1}}
+  - id: overlap_0
+    targets: partial_span
+    rationale: Overlapping chunks make top-k partly redundant; zero overlap covers more distinct text at the same k.
+    patch: {chunking: {chunk_overlap: 0}}
+  - id: overlap_half
+    targets: partial_span
+    rationale: Opposite direction - 50% overlap reduces answers being split across a chunk boundary.
+    patch: {chunking: {overlap_fraction: 0.5}}

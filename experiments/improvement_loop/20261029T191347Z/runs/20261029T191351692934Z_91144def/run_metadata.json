@@ -1,0 +1,64 @@
+{
+  "run_id": "20261029T191351692934Z_91144def",
+  "status": "completed",
+  "started_utc": "2026-10-29T19:13:51.692907+00:00",
+  "config_path": null,
+  "config_sha256": "91144defaf69e80b958ffbbb9e062e67ebd56666001e4ba9beb3d5773c3e8a9f",
+  "splits_evaluated": [
+    "train"
+  ],
+  "label": "loop:rerank_two_docs",
+  "git": {
+    "commit": "4b27a8eb15688c9689992deea3df9cd1e1bac7c5",
+    "dirty": true,
+    "changed_or_untracked_paths": [
+      "M README.md",
+      " M pyproject.toml",
+      " M uv.lock",
+      "?? app/abstention.py",
+      "?? app/cli.py",
+      "?? app/config.py",
+      "?? app/corpus.py",
+      "?? app/evaluate.py",
+      "?? app/loop.py",
+      "?? app/metrics.py",
+      "?? app/pipeline.py",
+      "?? app/retrieval.py",
+      "?? configs/",
+      "?? experiments/",
+      "?? interfaces/",
+      "?? scripts/",
+      "?? tests/__init__.py",
+      "?? tests/test_abstention.py",
+      "?? tests/test_corpus.py",
+      "?? tests/test_data_integrity.py",
+      "?? tests/test_evaluate.py",
+      "?? tests/test_improvements.py",
+      "?? tests/test_loop.py",
+      "?? tests/test_metrics.py",
+      "?? tests/test_retrieval.py"
+    ]
+  },
+  "versions": {
+    "python": "3.11.18",
+    "platform": "Linux-6.18.44-fc-v185-x86_64-with-glibc2.39",
+    "rank-bm25": "0.2.2",
+    "numpy": "2.4.6",
+    "pyyaml": "6.0.3"
+  },
+  "input_hashes": {
+    "benchmark": "8e0405b15fb8869c631da424372b488e274f253a81634b78803b21c72c0601f9",
+    "unanswerable": "3fb79f743deb15ba5abfc4140ad25610ef341a4ab09de714e340ed71fa76a91d",
+    "processed_split_file": "6f2a5c67b929e2e49c7dc3b5f1f130133c585c26f0c35781126fb173185bb604"
+  },
+  "num_answerable_queries": 194,
+  "num_annotations": 272,
+  "num_unanswerable_queries": 32,
+  "num_indexed_documents": 29,
+  "num_chunks": 848,
+  "corpus_combined_sha256": "fbf4a1c5318d4e5593ca741e9d76fa380610f7d213a291bccf001b0a6b5b4161",
+  "path_resolution_counts": {
+    "exact": 29
+  },
+  "finished_utc": "2026-10-29T19:13:53.461105+00:00"
+}

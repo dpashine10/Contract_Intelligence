@@ -1,0 +1,34 @@
+# BM25 baseline — the simplest reasonable pipeline. All later iterations are
+# compared against this. Values below are fixed engineering choices made
+# before looking at any results; they were NOT tuned on train or test.
+
+name: bm25_baseline
+
+data:
+  benchmark_path: data/raw/benchmarks/cuad.json      # mini(194) selected at load time
+  corpus_root: data/raw/corpus/cuad                  # only files the 194 queries reference are indexed
+  unanswerable_path: data/unanswerable_queries.json
+
+chunking:
+  method: fixed_tokens        # windows of regex word tokens, original offsets kept
+  chunk_size: 256             # tokens per chunk
+  chunk_overlap: 32           # tokens shared by consecutive chunks
+
+retrieval:
+  method: bm25_okapi          # rank_bm25.BM25Okapi
+  k1: 1.5
+  b: 0.75
+  epsilon: 0.25
+
+abstention:
+  rule: top1_score_threshold  # abstain iff top-1 BM25 score < threshold
+  threshold: null             # null = calibrate on TRAIN during evaluation, then freeze
+
+evaluation:
+  ks: [1, 2, 4, 8, 16, 32, 64]   # LegalBench-RAG k values (number of chunks)
+  retrieval_depth: 64            # chunks retrieved per query for evaluation
+
+ui:
+  display_top_k: 5            # results shown by the CLI/web app (independent of evaluation depth)
+
+output_root: experiments/bm25_baseline

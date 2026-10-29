@@ -1,0 +1,42 @@
+# Round 2 of the self-improvement loop (train only). Added AFTER round 1
+# (experiments/improvement_loop/20261029T191235Z) finished.
+# Why: the loop is greedy, so chunk size was tested before doc_local_rerank
+# was accepted. Round 2 re-tests chunk size on top of the round-1 best to
+# check for an interaction. Objective and guardrails are unchanged from
+# configs/loop.yaml; the "baseline" reference here is the round-1 best.
+
+base_config: experiments/improvement_loop/20261029T191235Z/final_config.yaml
+output_root: experiments/improvement_loop
+max_iterations: 3
+
+objective:
+  primary_metric: macro_recall
+  primary_k: 8
+  min_improvement: 0.01
+
+guardrails:
+  precision_k: 8
+  max_relative_precision_drop: 0.10
+  max_false_abstention_increase: 0.05
+  max_correct_abstention_drop: 0.05
+
+abstention_acceptance:
+  min_balanced_accuracy_gain: 0.02
+  max_balanced_accuracy_loss_for_robustness: 0.01
+  min_length_correlation_reduction: 0.30
+
+diagnostic_k: 8
+
+candidates:
+  - id: chunk_128_retest
+    targets: right_doc_wrong_section
+    rationale: Re-test 128-token chunks now that chunks are re-scored inside the top document (round 1 tested them only without re-ranking).
+    patch: {chunking: {chunk_size: 128, chunk_overlap: 16}}
+  - id: chunk_384
+    targets: partial_span
+    rationale: Opposite direction - larger chunks cover more of long answers at fixed k; the precision guardrail should show whether that is just retrieving more text.
+    patch: {chunking: {chunk_size: 384, chunk_overlap: 48}}
+  - id: rerank_two_docs
+    targets: right_doc_wrong_section
+    rationale: Re-score chunks of the top two documents instead of one, in case the first-stage document choice is wrong.
+    patch: {retrieval: {rerank_docs: 2}}

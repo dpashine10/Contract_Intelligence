@@ -1,0 +1,138 @@
+{
+  "final_run_id": "20261029T191347475686Z_127bfd15",
+  "applied_changes": [],
+  "baseline_run_id": "20261029T191347475686Z_127bfd15",
+  "final_train_summary": {
+    "run_id": "20261029T191347475686Z_127bfd15",
+    "run_dir": "experiments/improvement_loop/20261029T191347Z/runs/20261029T191347475686Z_127bfd15",
+    "macro_recall": {
+      "1": 0.04623664832992915,
+      "2": 0.11624689435802119,
+      "4": 0.31377302777786326,
+      "8": 0.60725181216253,
+      "16": 0.7882563721066661,
+      "32": 0.9327307867928324,
+      "64": 0.9874039555150839
+    },
+    "macro_precision": {
+      "1": 0.010896775974381125,
+      "2": 0.01621438041447459,
+      "4": 0.021056633447667093,
+      "8": 0.023621662011423298,
+      "16": 0.016602980696604753,
+      "32": 0.010344003410349014,
+      "64": 0.00552485693494291
+    },
+    "pooled_recall": {
+      "1": 0.03381871900390419,
+      "2": 0.0953360768175583,
+      "4": 0.2409781576448243,
+      "8": 0.5318006753191938,
+      "16": 0.7331433998100665,
+      "32": 0.9145035348739052,
+      "64": 0.9894481375962857
+    },
+    "abstention": {
+      "num_answerable": 140,
+      "num_unanswerable": 20,
+      "false_abstentions": 37,
+      "correct_abstentions": 16,
+      "correct_abstention_rate": 0.8,
+      "false_abstention_rate": 0.2642857142857143,
+      "abstention_precision": 0.3018867924528302,
+      "abstention_recall": 0.8,
+      "abstention_f1": 0.4383561643835617,
+      "balanced_accuracy": 0.7678571428571429
+    },
+    "abstention_rule": {
+      "rule": "top1_score_threshold",
+      "score": "raw_top1",
+      "threshold": 46.336014421582384,
+      "source": "calibrated on train in run 20261029T191347475686Z_127bfd15"
+    },
+    "length_correlation": 0.7111995383403062,
+    "diagnosis": {
+      "k": 8,
+      "answerable_buckets": {
+        "wrong_document": 0,
+        "right_doc_wrong_section": 46,
+        "partial_span": 18,
+        "full_coverage": 76
+      },
+      "false_abstentions": 37,
+      "false_answers_on_unanswerable": 4,
+      "incorrect_abstention": 41
+    },
+    "primary": 0.60725181216253,
+    "precision_guard": 0.023621662011423298
+  },
+  "baseline_train_summary": {
+    "run_id": "20261029T191347475686Z_127bfd15",
+    "run_dir": "experiments/improvement_loop/20261029T191347Z/runs/20261029T191347475686Z_127bfd15",
+    "macro_recall": {
+      "1": 0.04623664832992915,
+      "2": 0.11624689435802119,
+      "4": 0.31377302777786326,
+      "8": 0.60725181216253,
+      "16": 0.7882563721066661,
+      "32": 0.9327307867928324,
+      "64": 0.9874039555150839
+    },
+    "macro_precision": {
+      "1": 0.010896775974381125,
+      "2": 0.01621438041447459,
+      "4": 0.021056633447667093,
+      "8": 0.023621662011423298,
+      "16": 0.016602980696604753,
+      "32": 0.010344003410349014,
+      "64": 0.00552485693494291
+    },
+    "pooled_recall": {
+      "1": 0.03381871900390419,
+      "2": 0.0953360768175583,
+      "4": 0.2409781576448243,
+      "8": 0.5318006753191938,
+      "16": 0.7331433998100665,
+      "32": 0.9145035348739052,
+      "64": 0.9894481375962857
+    },
+    "abstention": {
+      "num_answerable": 140,
+      "num_unanswerable": 20,
+      "false_abstentions": 37,
+      "correct_abstentions": 16,
+      "correct_abstention_rate": 0.8,
+      "false_abstention_rate": 0.2642857142857143,
+      "abstention_precision": 0.3018867924528302,
+      "abstention_recall": 0.8,
+      "abstention_f1": 0.4383561643835617,
+      "balanced_accuracy": 0.7678571428571429
+    },
+    "abstention_rule": {
+      "rule": "top1_score_threshold",
+      "score": "raw_top1",
+      "threshold": 46.336014421582384,
+      "source": "calibrated on train in run 20261029T191347475686Z_127bfd15"
+    },
+    "length_correlation": 0.7111995383403062,
+    "diagnosis": {
+      "k": 8,
+      "answerable_buckets": {
+        "wrong_document": 0,
+        "right_doc_wrong_section": 46,
+        "partial_span": 18,
+        "full_coverage": 76
+      },
+      "false_abstentions": 37,
+      "false_answers_on_unanswerable": 4,
+      "incorrect_abstention": 41
+    },
+    "primary": 0.60725181216253,
+    "precision_guard": 0.023621662011423298
+  },
+  "tried": [
+    "chunk_128_retest",
+    "chunk_384",
+    "rerank_two_docs"
+  ]
+}

@@ -1,0 +1,33 @@
+name: bm25_baseline+doc_local_rerank
+data:
+  benchmark_path: data/raw/benchmarks/cuad.json
+  corpus_root: data/raw/corpus/cuad
+  unanswerable_path: data/unanswerable_queries.json
+chunking:
+  method: fixed_tokens
+  chunk_size: 256
+  chunk_overlap: 32
+retrieval:
+  method: bm25_okapi
+  k1: 1.5
+  b: 0.75
+  epsilon: 0.25
+  rerank: doc_local_bm25
+  rerank_docs: 1
+abstention:
+  rule: top1_score_threshold
+  threshold: 60.97195992041745
+  threshold_source: calibrated on train in run 20261029T191240896873Z_a92dff3f
+evaluation:
+  ks:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+  - 32
+  - 64
+  retrieval_depth: 64
+ui:
+  display_top_k: 5
+output_root: experiments/improvement_loop/20261029T191235Z/runs
