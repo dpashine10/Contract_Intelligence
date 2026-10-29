@@ -146,14 +146,14 @@ Rankings and metrics are deterministic for a fixed corpus and configuration.
 
 ## AI tool usage
 
-**Development.** Claude (Anthropic), used as an AI coding assistant through
-the Claude app, for all work from the BM25 baseline onward:
+**Development.** AI was used as a coding assistant through
+the entire development process for all work from the BM25 baseline onward:
 
 - inspecting the repository and the assignment specification;
 - implementing the BM25 baseline, character-level metrics, abstention calibration, evaluation runner, improvement loop, CLI, Streamlit app and their tests;
 - drafting the objective, guardrails and candidate pool in `configs/loop.yaml` before the loop ran;
 - running the baseline, improvement-loop and final evaluations;
-- drafting README.md and REPORT.md from the run artifacts, auditing the reported numbers against those artifacts, and exporting REPORT.pdf.
+- drafting README.md and REPORT.pdf from the run artifacts, auditing the reported numbers against those artifacts, and exporting REPORT.pdf.
 
 The project decisions were specified by me, and the assistant implemented them:
 
