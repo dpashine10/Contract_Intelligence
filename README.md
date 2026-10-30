@@ -146,7 +146,7 @@ Rankings and metrics are deterministic for a fixed corpus and configuration.
 
 ## AI tool usage
 
-**Development.** AI was used as a coding assistant through
+**Development.** Claude was used as a coding assistant through
 the entire development process for all work from the BM25 baseline onward:
 
 - inspecting the repository and the assignment specification;
